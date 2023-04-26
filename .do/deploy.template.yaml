@@ -1,0 +1,28 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+domains:
+- domain: wewlad789.com
+  type: PRIMARY
+features:
+- enable-kata-build
+name: first-functions-test
+region: nyc
+services:
+- cors:
+    allow_origins:
+    - prefix: https://internal.example-app.com
+  dockerfile_path: Dockerfile
+  envs:
+  - key: HUGO_VERSION
+    scope: RUN_AND_BUILD_TIME
+    value: 0.81.0
+  gitlab:
+    branch: main
+    deploy_on_push: true
+    repo: example-org/example-repo
+  http_port: 80
+  instance_count: 2
+  instance_size_slug: professional-xs
+  name: example-service-name
+  routes:
+  - path: /

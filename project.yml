@@ -1,0 +1,22 @@
+
+#services:
+#    envs:
+#    - key: API_SECRET
+#      scope: BUILD_AND_RUN_TIME
+#      value: vkCFySI2w/XMMuK6ykuQQxKnHDHsJsFz22apsvo0jr0
+#    - key: SPACES_KEY
+#      scope: BUILD_AND_RUN_TIME
+#      value: DO009GPWP7M7968CFPL9
+environment:
+  API_SECRET: ${API_SECRET}
+  SPACES_KEY: ${SPACES_KEY}
+  DB_USER: ${DB_USER}
+  DB_PASS: ${DB_PASS}
+packages:
+  - name: user
+    actions:
+      - name: get_profile_data
+        runtime: 'python:default'
+        limits:
+          memory: 1024
+          timeout: 900000
