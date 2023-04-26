@@ -25,27 +25,22 @@ print("connecting to DB:")
 print(db_user)
 print(db_pass)
 
+# db = mysql.connector.connect(
+#   host=host,
+#   user=db_user,
+#   passwd=db_pass,
+#   db="defaultdb",
+#   port="25060"
+# )
+
 db = mysql.connector.connect(
   host=host,
   user=db_user,
-  passwd=db_pass,
-  db="defaultdb",
-  port="25060"
+  password=db_pass,
+  database="defaultdb",
+  port=25060  
 )
-
 print(db)
-
-# try:
-#   db = mysql.connector.connect(
-#     host=host,
-#     user=db_user,
-#     passwd=db_pass,
-#     db="defaultdb"
-#   )
-# except:
-#   print("An exception occurred")
-
-  
 print("CONNECTED TO DB THIS IS GOOD!")
 
 
